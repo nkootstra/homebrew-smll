@@ -20,8 +20,13 @@ jobs:
       - uses: actions/checkout@v4
       - name: Set up Homebrew
         uses: Homebrew/actions/setup-homebrew@98cfa07b984a61682e6cd3a0833fad2006cc84ba # master @ 2026-04-22
-      - name: Tap local checkout
-        run: brew tap nkootstra/smll "$(pwd)"
+      - name: Link checkout into Homebrew tap directory
+        run: |
+          set -euo pipefail
+          tap_parent="$(brew --repository)/Library/Taps/nkootstra"
+          mkdir -p "$tap_parent"
+          ln -s "$(pwd)" "$tap_parent/homebrew-smll"
+          brew tap
       - name: brew audit --strict
         run: brew audit --strict --online nkootstra/smll/smll
       - name: brew install
