@@ -1,7 +1,6 @@
 class Smll < Formula
   desc "Tiny wrapper that compresses noisy command output for coding agents"
   homepage "https://github.com/nkootstra/smll"
-  license "MIT"
 
   # Source fallback for platforms without a prebuilt bottle (e.g. macOS Intel).
   # Version is inferred from the tag in the source URL; brew audit --strict
@@ -10,7 +9,7 @@ class Smll < Formula
   url "https://github.com/nkootstra/smll/archive/refs/tags/v1.3.1.tar.gz"
   # Anchor: source-sha256 (bump-formula.py rewrites the next line)
   sha256 "b59b54b620afa5ff9409cee5f79851a1e3509abeeb46cb2d54d1634bf551a802"
-  depends_on "zig" => :build
+  license "MIT"
 
   on_macos do
     on_arm do
@@ -18,6 +17,10 @@ class Smll < Formula
       url "https://github.com/nkootstra/smll/releases/download/v1.3.1/smll-1.3.1-aarch64-apple-darwin.tar.gz"
       # Anchor: macos-arm64-sha256 (bump-formula.py rewrites the next line)
       sha256 "872f8c1ec8dc489955e5dc54f1b9c9409a42530bc28e25f2ec2128e6b8b99c00"
+    end
+
+    on_intel do
+      depends_on "zig" => :build
     end
   end
 
