@@ -6,17 +6,17 @@ class Smll < Formula
   # Version is inferred from the tag in the source URL; brew audit --strict
   # rejects a redundant top-level `version` declaration for GitHub-tag URLs.
   # Anchor: source-url (bump-formula.py rewrites the next line)
-  url "https://github.com/nkootstra/smll/archive/refs/tags/v1.5.0.tar.gz"
+  url "https://github.com/nkootstra/smll/archive/refs/tags/v1.5.1.tar.gz"
   # Anchor: source-sha256 (bump-formula.py rewrites the next line)
-  sha256 "16bd45cea71a6650690445fde855d42e180e973ddf8c2ab90e2a49820f7954bb"
+  sha256 "a71a5b24a43549f8cd81de62ad0ce0a8a629cb33c590948b653083cf920dcb2f"
   license "MIT"
 
   on_macos do
     on_arm do
       # Anchor: macos-arm64-url (bump-formula.py rewrites the next line)
-      url "https://github.com/nkootstra/smll/releases/download/v1.5.0/smll-1.5.0-aarch64-apple-darwin.tar.gz"
+      url "https://github.com/nkootstra/smll/releases/download/v1.5.1/smll-1.5.1-aarch64-apple-darwin.tar.gz"
       # Anchor: macos-arm64-sha256 (bump-formula.py rewrites the next line)
-      sha256 "f7e492852959efa679eaad7b92be4b844c9b4a170890fb11f138723ba3ad999a"
+      sha256 "2e8bd96b437a8a33a81a8672ab654a6d1f20b64c69deed1fe0fa6312bc99778e"
     end
 
     on_intel do
@@ -27,15 +27,15 @@ class Smll < Formula
   on_linux do
     on_intel do
       # Anchor: linux-x86_64-url (bump-formula.py rewrites the next line)
-      url "https://github.com/nkootstra/smll/releases/download/v1.5.0/smll-1.5.0-x86_64-linux-gnu.tar.gz"
+      url "https://github.com/nkootstra/smll/releases/download/v1.5.1/smll-1.5.1-x86_64-linux-gnu.tar.gz"
       # Anchor: linux-x86_64-sha256 (bump-formula.py rewrites the next line)
-      sha256 "d22b998bfcf0f602ac516e30f7b8d4e3517ea2ee3b1ab60aac566e3f1d94f8d3"
+      sha256 "5aefd178eb9ddc5f8ece3efe439c6c0c9c877630c34fceb34a7e4c32868c2da5"
     end
     on_arm do
       # Anchor: linux-arm64-url (bump-formula.py rewrites the next line)
-      url "https://github.com/nkootstra/smll/releases/download/v1.5.0/smll-1.5.0-aarch64-linux-gnu.tar.gz"
+      url "https://github.com/nkootstra/smll/releases/download/v1.5.1/smll-1.5.1-aarch64-linux-gnu.tar.gz"
       # Anchor: linux-arm64-sha256 (bump-formula.py rewrites the next line)
-      sha256 "d14c78daee00f16b61a7b5155fb8ccac92dc07a592705f901c94da76ad212a80"
+      sha256 "7820b8fd3d96a98e856fd686596866e694949412abeaf4a4eaa843f2b5c4e418"
     end
   end
 
