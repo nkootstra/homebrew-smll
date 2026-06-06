@@ -52,6 +52,6 @@ class Smll < Formula
   test do
     # smll passes unknown commands through untouched (R3 lossless default).
     # `smll echo hello` invokes `echo hello` and emits its stdout byte-for-byte.
-    assert_equal "hello\n", shell_output("#{bin}/smll echo hello")
+    assert_equal "hello\n", shell_output("#{bin}/smll echo hello </dev/null")
   end
 end
