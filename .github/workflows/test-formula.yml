@@ -20,6 +20,11 @@ jobs:
       - uses: actions/checkout@v4
       - name: Set up Homebrew
         uses: Homebrew/actions/setup-homebrew@98cfa07b984a61682e6cd3a0833fad2006cc84ba # master @ 2026-04-22
+      - name: Install Linux sandbox dependency
+        if: runner.os == 'Linux'
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y bubblewrap
       - name: Link checkout into Homebrew tap directory
         run: |
           set -euo pipefail
