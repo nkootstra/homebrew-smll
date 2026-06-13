@@ -20,6 +20,14 @@ jobs:
       - uses: actions/checkout@v4
       - name: Set up Homebrew
         uses: Homebrew/actions/setup-homebrew@98cfa07b984a61682e6cd3a0833fad2006cc84ba # master @ 2026-04-22
+      - name: Configure Linux sandbox
+        if: runner.os == 'Linux'
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y bubblewrap
+          sudo sysctl -w kernel.unprivileged_userns_clone=1
+          sudo sysctl -w user.max_user_namespaces=28633
+          sudo sysctl -w kernel.apparmor_restrict_unprivileged_userns=0 || true
       - name: Link checkout into Homebrew tap directory
         run: |
           set -euo pipefail
